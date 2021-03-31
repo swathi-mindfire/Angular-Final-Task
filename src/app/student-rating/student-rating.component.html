@@ -1,14 +1,13 @@
 
-<div class="row"[formGroup] = "ratingForm">
+<div class="row">
     <div class="sub-grp col-md-12">
         <label for="name">Rating </label>  
-          <select name="rating" formControlName = "rating" class="form-control" id="rating">
+          <select name="rating" [formControl]= "rating" class="form-control" id="rating" (change)="ratingUpdate()">
               <option value="-1" disabled>Give rating out of 5</option>                
               <option *ngFor ="let i of ratings" value="{{i}}">{{i}}</option>
-         </select>
-         <div *ngIf = "ratingForm.controls['rating'].touched && ratingForm.controls['rating'].errors">
-            <p *ngIf = "ratingForm.controls['rating'].errors.required " class="errormsg">Please Enter your Name</p>
-             </div>
+         </select>         
+         <p *ngIf = "rating.invalid" class="errormsg">Please Give Rating</p>
+      
                         
     </div>                
 </div>

@@ -1,10 +1,14 @@
 <div class="container mt-5 pt-4 bg-info" id="main">
+    <div *ngIf = "ratingFromChild!=-1" id="showrating"> Rating:{{ratingFromChild}}</div>
+    <div *ngIf = "ratingFromChild!=-1" id="showrating">
+        
+    </div>
+   
     <h2 class="heding text-center" >Student Form</h2>  
     <div class="container" [formGroup] = "studentForm">            
         <div class="row mt-4">
             <div class="sub-grp col-md-12">
-                <label for="name">Enter Your Name </label>
-                
+                <label for="name">Enter Your Full Name </label>                
                 <input type="text" name="firstName" formControlName = "name" id="name" class="form-control ">
                 <div *ngIf = "studentForm.controls['name'].touched &&  studentForm.controls['name'].errors">
                     <p *ngIf = "studentForm.controls['name'].errors.required " class="errormsg">Please Enter your Name</p>
@@ -39,7 +43,7 @@
         </div>
         <div class="row mt-4">
             <div class="sub-grp col-md-12 mob">
-                <app-student-rating></app-student-rating>
+                <app-student-rating (sendRating) ="getRating($event)"></app-student-rating>
             </div>           
         </div>
         <div class="row mt-5">

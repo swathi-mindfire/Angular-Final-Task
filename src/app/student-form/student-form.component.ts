@@ -7,9 +7,15 @@ import{FormBuilder,Validators} from'@angular/forms';
   styleUrls: ['./student-form.component.css']
 })
 export class StudentFormComponent implements OnInit {
+  ratingFromChild:number
+  filledStars:Number[];
+  emptyStars:Number[];
   
 
   constructor(private fbr :FormBuilder) {
+    this.ratingFromChild = -1;
+    this.filledStars =[];
+    this.emptyStars = [];
 
    }
 
@@ -33,6 +39,20 @@ export class StudentFormComponent implements OnInit {
       this.registrationForm.setValue(this.myData)
     }
     */
+
+  getRating($event:any){
+    console.log($event);
+    this.ratingFromChild= $event;
+    for(var i=1 ;i<=this.ratingFromChild;i++){
+      this.filledStars.push(i)
+
+    }
+    for(var i=1 ;i<=5-this.ratingFromChild;i++){
+      this.emptyStars.push(i)
+
+    }
+    
+  }
 
 
 }
