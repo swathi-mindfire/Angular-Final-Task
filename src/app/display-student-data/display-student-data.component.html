@@ -1,0 +1,23 @@
+
+<div class="container mt-5 pt-1" id="data">
+    <div>{{message}}</div>
+    <div class="card mt-4 p-2" *ngFor ="let student of Students" (click)= "editStudent(student)" >
+
+        <div class="row">
+            <div class="col">
+                {{student.id}}
+            </div>
+            <div class="col">
+                {{student.name}}
+            </div>
+            <div class="col">
+                {{student.mobile}}
+            </div>
+            <div class="col">
+                {{student.rating}}
+            </div>
+        </div>
+    
+    </div>
+
+</div>

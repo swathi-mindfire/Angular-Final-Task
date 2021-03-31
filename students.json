@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name"   :   "swathi",
+      "mobile" :   "6767676767",
+      "gender" :    "F",
+      "rating" :    "3"    
+    },
+    {
+      "id": 2,
+      "name"   :   "XYZ",
+      "mobile" :   "6767676767",
+      "gender" :    "M",
+      "rating" :    "4"    
+    }
+  ]
+}

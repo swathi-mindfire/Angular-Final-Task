@@ -1,0 +1,22 @@
+#gender{
+    position: relative;
+    left:-15px;
+}
+.extra{
+    height: 50px;
+}
+
+#main{
+    border-radius: 20px;
+    color:white;
+}
+
+.heding{
+    height:60px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 10px 10px 0 0;
+    color: white;
+    vertical-align: middle;
+    padding-top: 10px;
+}
