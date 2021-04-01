@@ -84,7 +84,8 @@ export class StudentFormComponent implements OnInit {
     this.studentservice.addStudent(this.newStudent).subscribe(
       () => {
         this.studentForm.reset();
-        this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag})
+        this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag});
+        this.ratingFromChild = -1;
        
       },
       err => {
@@ -101,8 +102,9 @@ export class StudentFormComponent implements OnInit {
     this.studentservice.updateStudent(this.newStudent).subscribe(
       () => {
         this.studentForm.reset();
-        this.btnName="Submit"
-        this.studentservice.updatedFlag.next({added:!this.updated})
+        this.btnName="Submit";
+        this.studentservice.updatedFlag.next({added:!this.updated});
+        this.ratingFromChild = -1;
        
       },
       err => {
