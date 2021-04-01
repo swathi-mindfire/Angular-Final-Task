@@ -40,8 +40,18 @@ export class StudentFormComponent implements OnInit {
       if(res.id!=null){
         this.idOfUpdating = res.id;
         let data = { name:res.name,mobile:res.mobile,gender:res.gender}
-         this.studentForm.setValue(data);
-         this.btnName ="Update"
+        this.studentForm.setValue(data);
+        this.ratingFromChild = res.rating;
+        this.btnName ="Update";
+        this.filledStars =[];
+        this.emptyStars = [];
+        for(var i=1 ;i<=this.ratingFromChild;i++){
+          this.filledStars.push(i)
+        }
+        for(var i=1 ;i<=5-this.ratingFromChild;i++){
+          this.emptyStars.push(i)
+
+        }
          
       }
     })

@@ -5,7 +5,7 @@
       "name": "mothukuri swathi",
       "mobile": 8555098778,
       "gender": "Female",
-      "rating": "3"
+      "rating": "4"
     },
     {
       "id": 2,
@@ -100,17 +100,17 @@
     },
     {
       "id": 15,
-      "name": "Lakin",
+      "name": "mno",
       "mobile": 6789897898,
       "gender": "Male",
-      "rating": "4"
+      "rating": "2"
     },
     {
       "id": 16,
-      "name": "Asish",
+      "name": "abc",
       "mobile": 7654345689,
       "gender": "Female",
-      "rating": "4"
+      "rating": "2"
     },
     {
       "id": 17,
@@ -128,10 +128,10 @@
     },
     {
       "id": 19,
-      "name": "Boddhi",
+      "name": "Nistha",
       "mobile": 4567865545,
       "gender": "Female",
-      "rating": "4"
+      "rating": "2"
     },
     {
       "id": 20,
