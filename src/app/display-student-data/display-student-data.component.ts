@@ -50,17 +50,20 @@ export class DisplayStudentDataComponent implements OnInit {
       },
       (err) => {
         this.message = err.message+" while fetching data";
+        this.getStudentList(null); 
         if(notify=="update"){
           this.notification ="Error while Updating data";
           setTimeout(()=>{
             this.notification =null;
           },5000)
+          this.getStudentList("update");
         }
         else if(notify=="new"){
           this.notification ="Error while adding data";
           setTimeout(()=>{
             this.notification =null;
           },5000)
+          this.getStudentList("new");
         }
         else this.notification = null;        
       }
