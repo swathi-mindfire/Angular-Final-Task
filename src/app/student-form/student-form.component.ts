@@ -88,8 +88,8 @@ export class StudentFormComponent implements OnInit {
         this.postError= null;
        
       },
-      err => {
-        this.postError = err+"error while posting data";
+      (err) => {
+        this.postError ="Error while posting data";
       }
     );
   }
@@ -108,8 +108,8 @@ export class StudentFormComponent implements OnInit {
         this.postError= null;
        
       },
-      err => {
-        this.postError= err+"error while updating data";
+      (err) => {
+        this.postError= "Error while updating data";
       }
     );
   }
