@@ -1,16 +1,16 @@
 
 <div class="container mt-5 pt-1" >
-    <div>{{message}}</div>
+    <div *ngIf = "notification != null" class="text-center text-info">{{notification}}</div>
     <div id="data">
-        <div class="card mt-1 p-2 bg-primary text-white">
+        <div class="card mt-2 p-2 bg-primary text-white">
             <div class="row">
                 <div class="col col-md-2">Id</div>
                 <div class="col col-md-4">Name</div>
                 <div class="col col-md-4">Mobile Number</div>
                 <div class="col col-md-2">Rating</div>
-            </div>
-        
+            </div>        
         </div>
+        <div>{{message}}</div>
         <div class="card mt-4 p-2 data-row" *ngFor ="let student of Students" (click)= "editStudent(student)">
 
             <div class="row data-row">

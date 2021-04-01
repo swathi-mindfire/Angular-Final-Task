@@ -9,35 +9,63 @@ import {StudentService} from '../student-service'
 })
 export class DisplayStudentDataComponent implements OnInit {
   Students: Student[];
-  message=""
+  message="";
+  notification = null;
 
   constructor(private studentservice:StudentService) { }
 
   ngOnInit(): void {
+   
+    
     this.studentservice.updatedFlag.subscribe(()=>{
-      this.getStudentList();
+      this.getStudentList("update");
     });
     this.studentservice.newDataFlag.subscribe(()=>{
-      this.getStudentList();
+      this.getStudentList("new");
     });
-    this.studentservice.dataToEdit.subscribe((res)=>{
+    this.studentservice.dataToEdit.subscribe(()=>{
 
-    })   
+    }) 
+    this.getStudentList(null);  
   }
-  getStudentList() {
+  getStudentList(notify:string) {
     this.studentservice.getStudents().subscribe(
       (students: Student[]) => {
         this.Students= students;
+        this.message= "";
+        if(notify=="update"){
+          this.notification ="Updated successfully";
+          setTimeout(()=>{
+            this.notification =null;
+          },5000)
+        }
+        else if(notify=="new"){
+          this.notification ="New student added successfully";
+          setTimeout(()=>{
+            this.notification =null;
+          },5000)
+        }
+        else this.notification = null;
        
       },
       (err) => {
-        this.message = err.message;
-        
+        this.message = err.message+" while fetching data";
+        if(notify=="update"){
+          this.notification ="Error while Updating data";
+          setTimeout(()=>{
+            this.notification =null;
+          },5000)
+        }
+        else if(notify=="new"){
+          this.notification ="Error while adding data";
+          setTimeout(()=>{
+            this.notification =null;
+          },5000)
+        }
+        else this.notification = null;        
       }
     );
   }
-
-
   editStudent(s:Student){
     this.studentservice.dataToEdit.next({id:s.id,name:s.name,mobile:s.mobile,gender:s.gender,rating:s.rating})
   }

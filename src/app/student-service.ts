@@ -14,13 +14,9 @@ export class StudentService{
     getStudents(): Observable<Student[]> {
         return this.http.get<Student[]>(this.apiURL);
       }
-
-     //editableData = new BehaviorSubject({name:'',})
-
       addStudent(student): Observable<Student>{
         return this.http.post<any>(this. apiURL,student);
       }
-
       updatedFlag = new BehaviorSubject({added:false})
       newDataFlag = new BehaviorSubject({newDataFlag:false})
 

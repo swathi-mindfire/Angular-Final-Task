@@ -22,7 +22,7 @@
         <div class="row mt-4">
             <div class="sub-grp col-md-12 mob">
                 <label for="name">Enter Your  Mobile Number </label>
-                <input type="number" name="mobile"id="mobile"  formControlName = "mobile" class="form-control "><br>
+                <input type="tel" name="mobile"id="mobile"  formControlName = "mobile" class="form-control "><br>
                 <div *ngIf = "studentForm.controls['mobile'].touched && studentForm.controls['mobile'].errors">
                     <p *ngIf = "studentForm.controls['mobile'].errors.required" class="errormsg">Please Enter your Mobile Number</p>                        
                     <p *ngIf = "studentForm.controls['mobile'].errors.minlength || studentForm.controls['mobile'].errors.maxlength" class="errormsg">Enter valid Mobile Number</p>

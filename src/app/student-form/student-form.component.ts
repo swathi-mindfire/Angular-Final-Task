@@ -16,7 +16,7 @@ export class StudentFormComponent implements OnInit {
   btnName:string;
   updated:boolean;
   newDataFlag:boolean;
-  postError:"";
+  postError:string;
   idOfUpdating:null;
   
 
@@ -43,6 +43,7 @@ export class StudentFormComponent implements OnInit {
         this.studentForm.setValue(data);
         this.ratingFromChild = res.rating;
         this.btnName ="Update";
+        this.manageStars(this.ratingFromChild);
         this.filledStars =[];
         this.emptyStars = [];
         for(var i=1 ;i<=this.ratingFromChild;i++){
@@ -60,24 +61,12 @@ export class StudentFormComponent implements OnInit {
     studentForm  = this.fbr.group({
     name         :  ['',[Validators.required,Validators.minLength(3)]],
     mobile       :  ['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
-    gender       :  ['',Validators.required],
-    
-  
+    gender       :  ['',Validators.required],  
     })
-
   getRating(r:number){
     this.ratingFromChild= r;
-    this.filledStars =[];
-    this.emptyStars = [];
-    for(var i=1 ;i<=this.ratingFromChild;i++){
-      this.filledStars.push(i)
-    }
-    for(var i=1 ;i<=5-this.ratingFromChild;i++){
-      this.emptyStars.push(i)
-
-    }
-   
-  }
+    this.manageStars(this.ratingFromChild);
+   }
   submitAction(){
     if(this.btnName == "Submit"){
       this.postData()
@@ -96,10 +85,11 @@ export class StudentFormComponent implements OnInit {
         this.studentForm.reset();
         this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag});
         this.ratingFromChild = -1;
+        this.postError= null;
        
       },
       err => {
-        this.postError= err;
+        this.postError = err+"error while posting data";
       }
     );
   }
@@ -115,12 +105,23 @@ export class StudentFormComponent implements OnInit {
         this.btnName="Submit";
         this.studentservice.updatedFlag.next({added:!this.updated});
         this.ratingFromChild = -1;
+        this.postError= null;
        
       },
       err => {
-        this.postError= err;
+        this.postError= err+"error while updating data";
       }
     );
+  }
+  manageStars(rating:number){
+    this.filledStars =[];
+    this.emptyStars = [];
+    for(var i=1 ;i<=rating;i++){
+      this.filledStars.push(i)
+    }
+    for(var i=1 ;i<=5-rating;i++){
+      this.emptyStars.push(i)
+    }   
   }
 
 
