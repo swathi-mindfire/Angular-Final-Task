@@ -16,7 +16,13 @@ export class DisplayStudentDataComponent implements OnInit {
   ngOnInit(): void {
     this.studentservice.updatedFlag.subscribe(()=>{
       this.getStudentList();
-    })    
+    });
+    this.studentservice.newDataFlag.subscribe(()=>{
+      this.getStudentList();
+    });
+    this.studentservice.dataToEdit.subscribe((res)=>{
+
+    })   
   }
   getStudentList() {
     this.studentservice.getStudents().subscribe(
@@ -33,7 +39,7 @@ export class DisplayStudentDataComponent implements OnInit {
 
 
   editStudent(s:Student){
-    console.log(s)
+    this.studentservice.dataToEdit.next({id:s.id,name:s.name,mobile:s.mobile,gender:s.gender,rating:s.rating})
   }
 
   }

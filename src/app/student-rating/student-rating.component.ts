@@ -17,7 +17,12 @@ export class StudentRatingComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentservice.updatedFlag.subscribe(()=>{
-      this.rating.setValue(-1)
+      this.rating.setValue(-1);
+    })
+    this.studentservice.dataToEdit.subscribe((res)=>{
+      if(res.id!=null){
+        this.rating.setValue(res.rating);
+      }
     })
   }
   rating = new FormControl('-1',Validators.required)

@@ -14,7 +14,10 @@ export class StudentFormComponent implements OnInit {
   filledStars:Number[];
   emptyStars:Number[];
   btnName:string;
-  updated:boolean
+  updated:boolean;
+  newDataFlag:boolean;
+  postError:"";
+  idOfUpdating:null;
   
 
   constructor(private fbr :FormBuilder,private studentservice :StudentService) {
@@ -30,6 +33,18 @@ export class StudentFormComponent implements OnInit {
     this.studentservice.updatedFlag.subscribe((res)=>{
       this.updated = res.added;
     })
+    this.studentservice.newDataFlag.subscribe((res)=>{
+      this.newDataFlag = res.newDataFlag;
+    })
+    this.studentservice.dataToEdit.subscribe((res)=>{
+      if(res.id!=null){
+        this.idOfUpdating = res.id;
+        let data = { name:res.name,mobile:res.mobile,gender:res.gender}
+         this.studentForm.setValue(data);
+         this.btnName ="Update"
+         
+      }
+    })
     
   }
     studentForm  = this.fbr.group({
@@ -39,16 +54,6 @@ export class StudentFormComponent implements OnInit {
     
   
     })
-
-  
-   /*
-    clear(){
-      this.registrationForm.reset();
-    }
-    fill(){
-      this.registrationForm.setValue(this.myData)
-    }
-    */
 
   getRating(r:number){
     this.ratingFromChild= r;
@@ -63,6 +68,14 @@ export class StudentFormComponent implements OnInit {
     }
    
   }
+  submitAction(){
+    if(this.btnName == "Submit"){
+      this.postData()
+    }
+    else{
+      this.putData()
+    }
+  }
   postData(){
     this.newStudent.name= this.studentForm.value.name;
     this.newStudent.mobile= this.studentForm.value.mobile;
@@ -71,15 +84,31 @@ export class StudentFormComponent implements OnInit {
     this.studentservice.addStudent(this.newStudent).subscribe(
       () => {
         this.studentForm.reset();
+        this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag})
+       
+      },
+      err => {
+        this.postError= err;
+      }
+    );
+  }
+  putData(){
+    this.newStudent.id= this.idOfUpdating;
+    this.newStudent.name= this.studentForm.value.name;
+    this.newStudent.mobile= this.studentForm.value.mobile;
+    this.newStudent.gender= this.studentForm.value.gender;
+    this.newStudent.rating= this.ratingFromChild;
+    this.studentservice.updateStudent(this.newStudent).subscribe(
+      () => {
+        this.studentForm.reset();
+        this.btnName="Submit"
         this.studentservice.updatedFlag.next({added:!this.updated})
        
       },
       err => {
-        console.error(err);
+        this.postError= err;
       }
     );
-    //this.studentForm.reset();
-    this.ratingFromChild =-1;
   }
 
 

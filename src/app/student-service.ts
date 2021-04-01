@@ -22,9 +22,12 @@ export class StudentService{
       }
 
       updatedFlag = new BehaviorSubject({added:false})
+      newDataFlag = new BehaviorSubject({newDataFlag:false})
+
+      dataToEdit = new BehaviorSubject({id:null,name:"",mobile:null,gender:"",rating:null})
   
-      /*updateStudent(student): Observable<any>{
+      updateStudent(student): Observable<any>{
         return this.http.put(`${this. apiURL }/${student.id}`,student);
-      }*/
+      }
 
 }

@@ -49,9 +49,10 @@
                 <app-student-rating (sendRating) ="getRating($event)"></app-student-rating>
             </div>           
         </div>
+        
         <div class="row mt-5">
             <div class="col">
-                <button class="btn btn-secondary form-control" [disabled] ="studentForm.invalid || ratingFromChild==-1"(click)="postData()">{{btnName}}</button>
+                <button class="btn btn-secondary form-control" [disabled] ="studentForm.invalid || ratingFromChild==-1"(click)="submitAction()">{{btnName}}</button>
             </div>
         </div>
         <div class="extra"></div>

@@ -2,17 +2,17 @@
   "students": [
     {
       "id": 1,
-      "name": "swathi",
+      "name": "mothukuri swathi",
       "mobile": "6767676767",
-      "gender": "F",
+      "gender": "Female",
       "rating": "3"
     },
     {
       "id": 2,
-      "name": "XYZ",
+      "name": "mothukuri xyx",
       "mobile": "6767676767",
-      "gender": "M",
-      "rating": "4"
+      "gender": "Male",
+      "rating": "3"
     },
     {
       "id": 3,
@@ -111,6 +111,76 @@
       "mobile": 7654345689,
       "gender": "Female",
       "rating": "4"
+    },
+    {
+      "id": 17,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 18,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 19,
+      "name": "Boddhi",
+      "mobile": 4567865545,
+      "gender": "Female",
+      "rating": "4"
+    },
+    {
+      "id": 20,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 21,
+      "name": "swathi",
+      "mobile": "6767676767",
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 22,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 23,
+      "name": "XYZ",
+      "mobile": "6767676767",
+      "gender": "Male",
+      "rating": "3"
+    },
+    {
+      "id": 24,
+      "name": "swathi m",
+      "mobile": 6767676776,
+      "gender": "Female",
+      "rating": "3"
+    },
+    {
+      "id": 25,
+      "name": "swathi",
+      "mobile": "6767676767",
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 26,
+      "name": "swathi ms",
+      "mobile": "6767676767",
+      "gender": "Female",
+      "rating": "2"
     }
   ]
 }
