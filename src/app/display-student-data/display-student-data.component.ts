@@ -8,16 +8,17 @@ import {StudentService} from '../student-service'
   styleUrls: ['./display-student-data.component.css']
 })
 export class DisplayStudentDataComponent implements OnInit {
-  Students: Student[] =[];
+  Students: Student[];
   message=""
 
   constructor(private studentservice:StudentService) { }
 
   ngOnInit(): void {
-    this.getAllEmps();
+    this.studentservice.updatedFlag.subscribe(()=>{
+      this.getStudentList();
+    })    
   }
-
-  getAllEmps() {
+  getStudentList() {
     this.studentservice.getStudents().subscribe(
       (students: Student[]) => {
         this.Students= students;
@@ -29,6 +30,7 @@ export class DisplayStudentDataComponent implements OnInit {
       }
     );
   }
+
 
   editStudent(s:Student){
     console.log(s)

@@ -20,6 +20,7 @@
     vertical-align: middle;
     padding-top: 10px;
 }
-#showrating{
-    text-align: right;
+
+.filled{
+    color:orange;
 }

@@ -2,17 +2,115 @@
   "students": [
     {
       "id": 1,
-      "name"   :   "swathi",
-      "mobile" :   "6767676767",
-      "gender" :    "F",
-      "rating" :    "3"    
+      "name": "swathi",
+      "mobile": "6767676767",
+      "gender": "F",
+      "rating": "3"
     },
     {
       "id": 2,
-      "name"   :   "XYZ",
-      "mobile" :   "6767676767",
-      "gender" :    "M",
-      "rating" :    "4"    
+      "name": "XYZ",
+      "mobile": "6767676767",
+      "gender": "M",
+      "rating": "4"
+    },
+    {
+      "id": 3,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "3"
+    },
+    {
+      "id": 4,
+      "name": "zxcvb",
+      "mobile": 7687897686,
+      "gender": "Female",
+      "rating": "4"
+    },
+    {
+      "id": 5,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 6,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Male",
+      "rating": "1"
+    },
+    {
+      "id": 7,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "5"
+    },
+    {
+      "id": 8,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "2"
+    },
+    {
+      "id": 9,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Male",
+      "rating": "4"
+    },
+    {
+      "id": 10,
+      "name": "swathi mothukuri",
+      "mobile": 7878787878,
+      "gender": "Male",
+      "rating": "2"
+    },
+    {
+      "id": 11,
+      "name": "bala",
+      "mobile": 7676754546,
+      "gender": "Female",
+      "rating": "4"
+    },
+    {
+      "id": 12,
+      "name": "padma",
+      "mobile": 1234567676,
+      "gender": "Female",
+      "rating": "3"
+    },
+    {
+      "id": 13,
+      "name": "swasd",
+      "mobile": 7687897689,
+      "gender": "Female",
+      "rating": "3"
+    },
+    {
+      "id": 14,
+      "name": "murali",
+      "mobile": 8987676765,
+      "gender": "Male",
+      "rating": "1"
+    },
+    {
+      "id": 15,
+      "name": "Lakin",
+      "mobile": 6789897898,
+      "gender": "Male",
+      "rating": "4"
+    },
+    {
+      "id": 16,
+      "name": "Asish",
+      "mobile": 7654345689,
+      "gender": "Female",
+      "rating": "4"
     }
   ]
 }

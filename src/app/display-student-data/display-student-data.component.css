@@ -1,3 +1,11 @@
 #data{
     overflow: auto;
+    height:580px;
+}
+.data-row{
+    cursor: pointer;
+}
+.data-row:hover {
+    background-color: #009b77;
+    color: white;
 }

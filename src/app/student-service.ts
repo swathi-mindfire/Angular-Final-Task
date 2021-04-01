@@ -15,13 +15,15 @@ export class StudentService{
         return this.http.get<Student[]>(this.apiURL);
       }
 
-     /*editableData = new BehaviorSubject({name:'',})
+     //editableData = new BehaviorSubject({name:'',})
 
-      insertStudent(student): Observable<Student>{
+      addStudent(student): Observable<Student>{
         return this.http.post<any>(this. apiURL,student);
       }
+
+      updatedFlag = new BehaviorSubject({added:false})
   
-      updateStudent(student): Observable<any>{
+      /*updateStudent(student): Observable<any>{
         return this.http.put(`${this. apiURL }/${student.id}`,student);
       }*/
 

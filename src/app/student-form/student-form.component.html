@@ -1,7 +1,10 @@
 <div class="container mt-5 pt-4 bg-info" id="main">
-    <div *ngIf = "ratingFromChild!=-1" id="showrating"> Rating:{{ratingFromChild}}</div>
-    <div *ngIf = "ratingFromChild!=-1" id="showrating">
-        
+    <div class="show-stars d-flex flex-row-reverse">    
+        <div *ngIf = "ratingFromChild!=-1" id="showrating">
+            <span>Rating: </span>
+            <span *ngFor ="let i of filledStars"><i class="fa fa-star filled"></i></span>
+            <span *ngFor ="let i of emptyStars"><i class="fa fa-star"></i></span>
+        </div>
     </div>
    
     <h2 class="heding text-center" >Student Form</h2>  
@@ -48,7 +51,7 @@
         </div>
         <div class="row mt-5">
             <div class="col">
-                <button class="btn btn-secondary form-control">Submit</button>
+                <button class="btn btn-secondary form-control" [disabled] ="studentForm.invalid || ratingFromChild==-1"(click)="postData()">{{btnName}}</button>
             </div>
         </div>
         <div class="extra"></div>

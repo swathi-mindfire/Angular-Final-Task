@@ -1,23 +1,33 @@
 
-<div class="container mt-5 pt-1" id="data">
+<div class="container mt-5 pt-1" >
     <div>{{message}}</div>
-    <div class="card mt-4 p-2" *ngFor ="let student of Students" (click)= "editStudent(student)" >
-
-        <div class="row">
-            <div class="col">
-                {{student.id}}
+    <div id="data">
+        <div class="card mt-1 p-2 bg-primary text-white">
+            <div class="row">
+                <div class="col col-md-2">Id</div>
+                <div class="col col-md-4">Name</div>
+                <div class="col col-md-4">Mobile Number</div>
+                <div class="col col-md-2">Rating</div>
             </div>
-            <div class="col">
-                {{student.name}}
-            </div>
-            <div class="col">
-                {{student.mobile}}
-            </div>
-            <div class="col">
-                {{student.rating}}
-            </div>
+        
         </div>
-    
-    </div>
+        <div class="card mt-4 p-2 data-row" *ngFor ="let student of Students" (click)= "editStudent(student)">
 
+            <div class="row data-row">
+                <div class="col col-md-2">
+                    {{student.id}}
+                </div>
+                <div class="col col-md-4">
+                    {{student.name}}
+                </div>
+                <div class="col col-md-4">
+                    {{student.mobile}}
+                </div>
+                <div class="col col-md-2">
+                    {{student.rating}}
+                </div>
+            </div>
+        
+        </div>
+    </div>   
 </div>
