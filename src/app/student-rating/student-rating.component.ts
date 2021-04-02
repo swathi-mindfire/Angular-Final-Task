@@ -19,6 +19,9 @@ export class StudentRatingComponent implements OnInit {
     this.studentservice.updatedFlag.subscribe(()=>{
       this.rating.setValue(-1);
     })
+    this.studentservice.newDataFlag.subscribe(()=>{
+      this.rating.setValue(-1);
+    })
     this.studentservice.dataToEdit.subscribe((res)=>{
       if(res.id!=null){
         this.rating.setValue(res.rating);

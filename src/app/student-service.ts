@@ -15,7 +15,7 @@ export class StudentService{
         return this.http.get<Student[]>(this.apiURL);
       }
       addStudent(student): Observable<Student>{
-        return this.http.post<any>(this. apiURL,student);
+        return this.http.post<Student>(this. apiURL,student);
       }
       updatedFlag = new BehaviorSubject({added:false})
       newDataFlag = new BehaviorSubject({newDataFlag:false})

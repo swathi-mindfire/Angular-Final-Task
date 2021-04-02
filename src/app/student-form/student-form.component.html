@@ -1,9 +1,12 @@
 <div class="container mt-5 pt-4 bg-info" id="main">
-    <div class="show-stars d-flex flex-row-reverse">    
+    <div class="show-stars d-flex flex-row-reverse justify-content-between">
         <div *ngIf = "ratingFromChild!=-1" id="showrating">
-            <span>Rating: </span>
+            <span>&emsp;Rating: </span>
             <span *ngFor ="let i of filledStars"><i class="fa fa-star filled"></i></span>
             <span *ngFor ="let i of emptyStars"><i class="fa fa-star"></i></span>
+        </div>
+        <div *ngIf ="displayName!=false">
+            <h4>Name:   {{fullName.value | titlecase}}</h4>
         </div>
     </div>
    
@@ -12,7 +15,7 @@
         <div class="row mt-4">
             <div class="sub-grp col-md-12">
                 <label for="name">Enter Your Full Name </label>                
-                <input type="text" name="firstName" formControlName = "name" id="name" class="form-control ">
+                <input type="text" name="firstName" formControlName = "name" id="name" #fullName class="form-control ">
                 <div *ngIf = "studentForm.controls['name'].touched &&  studentForm.controls['name'].errors">
                     <p *ngIf = "studentForm.controls['name'].errors.required " class="errormsg">Please Enter your Name</p>
                     <p *ngIf = "studentForm.controls['name'].errors.minlength" class="errormsg">Name is minimum 3 characters</p>
@@ -55,8 +58,8 @@
                 <button class="btn btn-secondary form-control" [disabled] ="studentForm.invalid || ratingFromChild==-1"(click)="submitAction()">{{btnName}}</button>
             </div>
         </div>
-        <div *ngIf = "postError !=null" class="text-center text-white mt-2">{{postError}}</div>
-        <div class="extra"></div>
+        <div *ngIf = "postError !=null" class="text-center text-white mt-2"><h3>{{postError}}</h3></div>
+        <div class="extra"> </div>
        
     </div>
 </div>

@@ -18,6 +18,7 @@ export class StudentFormComponent implements OnInit {
   newDataFlag:boolean;
   postError:string;
   idOfUpdating:null;
+  displayName:boolean = false;
   
 
   constructor(private fbr :FormBuilder,private studentservice :StudentService) {
@@ -30,12 +31,6 @@ export class StudentFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.studentservice.updatedFlag.subscribe((res)=>{
-      this.updated = res.added;
-    })
-    this.studentservice.newDataFlag.subscribe((res)=>{
-      this.newDataFlag = res.newDataFlag;
-    })
     this.studentservice.dataToEdit.subscribe((res)=>{
       if(res.id!=null){
         this.idOfUpdating = res.id;
@@ -43,6 +38,7 @@ export class StudentFormComponent implements OnInit {
         this.studentForm.setValue(data);
         this.ratingFromChild = res.rating;
         this.btnName ="Update";
+        this.displayName =true;
         this.manageStars(this.ratingFromChild);
         this.filledStars =[];
         this.emptyStars = [];
@@ -83,10 +79,13 @@ export class StudentFormComponent implements OnInit {
     this.studentservice.addStudent(this.newStudent).subscribe(
       () => {
         this.studentForm.reset();
+        this.studentservice.newDataFlag.subscribe((res)=>{
+          this.newDataFlag = res.newDataFlag;
+        })
         this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag});
         this.ratingFromChild = -1;
         this.postError= null;
-       
+        this.displayName =false;      
       },
       (err) => {
         this.postError ="Error while posting data";
@@ -103,9 +102,14 @@ export class StudentFormComponent implements OnInit {
       () => {
         this.studentForm.reset();
         this.btnName="Submit";
+        this.studentservice.updatedFlag.subscribe((res)=>{
+          this.updated = res.added;
+        })
         this.studentservice.updatedFlag.next({added:!this.updated});
         this.ratingFromChild = -1;
         this.postError= null;
+        this.displayName =false;
+        
        
       },
       (err) => {

@@ -3,11 +3,11 @@ import {Student} from '../student-interface';
 import {StudentService} from '../student-service'
 
 @Component({
-  selector: 'app-display-student-data',
-  templateUrl: './display-student-data.component.html',
-  styleUrls: ['./display-student-data.component.css']
+  selector: 'app-display-student-list',
+  templateUrl: './display-student-list.component.html',
+  styleUrls: ['./display-student-list.component.css']
 })
-export class DisplayStudentDataComponent implements OnInit {
+export class DisplayStudentListComponent implements OnInit {
   Students: Student[];
   message="";
   notification = null;
