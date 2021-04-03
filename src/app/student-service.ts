@@ -19,6 +19,7 @@ export class StudentService{
       }
       updatedFlag = new BehaviorSubject({added:false,start:false})
       newDataFlag = new BehaviorSubject({newDataFlag:false,start:false})
+      selectedStudent = new BehaviorSubject({studentId:null})
 
       dataToEdit = new BehaviorSubject({id:null,name:"",mobile:null,gender:"",rating:null})
   

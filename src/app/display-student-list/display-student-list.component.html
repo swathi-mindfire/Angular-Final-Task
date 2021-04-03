@@ -12,7 +12,7 @@
         </div>
         <div>{{message}}</div>
         <div *ngFor = "let s of Students">
-            <app-student-card [student] = s></app-student-card>
-        </div>
+            <app-student-card [student] = s  (click)= "updateSelectedChild(s.id)"></app-student-card>
+        </div><!--[clickedId] = {{selectedChildId}}-->
     </div>   
 </div>

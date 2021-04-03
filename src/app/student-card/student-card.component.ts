@@ -15,6 +15,7 @@ export class StudentCardComponent implements OnInit {
   studentValues =[];
 
   @Input() student :Student;
+  //@Input() clickedId :Number;
   constructor(private studentservice:StudentService) {
     this.clicked = false;
     this.studentKeys =["id","name","mobile","gender","rating"];
@@ -29,10 +30,20 @@ export class StudentCardComponent implements OnInit {
     this.studentservice.updatedFlag.subscribe(()=>{
       this.clicked = false;
     })
+    this.studentservice.selectedStudent.subscribe((res)=>{
+      if(res.studentId ==this.student.id){
+        this.clicked = true;
+
+      }
+      else{
+        this.clicked = false;
+      }
+
+    })
   }
 
   editStudent(){
-    this.clicked = true;
+    //this.clicked = true;
     this.studentservice.dataToEdit.next({id:this.student.id,name:this.student.name,mobile:this.student.mobile,gender:this.student.gender,rating:this.student.rating})
     
   }
