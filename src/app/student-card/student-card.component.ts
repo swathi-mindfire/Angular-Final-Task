@@ -28,10 +28,10 @@ export class StudentCardComponent implements OnInit {
       
     })
     this.studentservice.updatedFlag.subscribe(()=>{
-      this.clicked = false;
+      this.clicked = false;      
     })
     this.studentservice.selectedStudent.subscribe((res)=>{
-      if(res.studentId ==this.student.id){
+      if(res.studentId ===this.student.id){
         this.clicked = true;
 
       }

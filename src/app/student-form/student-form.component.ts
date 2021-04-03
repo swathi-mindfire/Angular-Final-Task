@@ -51,6 +51,9 @@ export class StudentFormComponent implements OnInit {
         }
          
       }
+    });
+    this.studentservice.selectedStudent.subscribe(()=>{
+      
     })
     
   }
@@ -85,7 +88,8 @@ export class StudentFormComponent implements OnInit {
         this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag,start:true});
         this.ratingFromChild = -1;
         this.postError= null;
-        this.displayName =false;      
+        this.displayName =false;
+            
       },
       (err) => {
         this.postError ="Error while posting data";
@@ -109,9 +113,9 @@ export class StudentFormComponent implements OnInit {
         this.ratingFromChild = -1;
         this.postError= null;
         this.displayName =false;
+        this.studentservice.selectedStudent.next({studentId:null});
         
-       
-      },
+       },
       (err) => {
         this.postError= "Error while updating data";
       }

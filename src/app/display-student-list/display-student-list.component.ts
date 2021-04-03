@@ -12,12 +12,10 @@ export class DisplayStudentListComponent implements OnInit {
   message="";
   notification;
   clicked:boolean;
-  selectedChildId;
-
   constructor(private studentservice:StudentService) {
     this.clicked =false;
     this.notification = null;
-    this.selectedChildId = null
+   
    }
 
   ngOnInit(): void {   
@@ -78,7 +76,7 @@ export class DisplayStudentListComponent implements OnInit {
     );
   }
   updateSelectedChild(id){
-    //this.selectedChildId =id;
+  
     this.studentservice.selectedStudent.next({studentId:id})
 
   }
