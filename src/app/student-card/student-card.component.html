@@ -1,1 +1,16 @@
-<p>student-card works!</p>
+<div class="card mt-4 p-2 s-card" (click)= "editStudent()" [class.bg-primary]= "clicked">
+    <div class="row ">
+        <div class="col col-md-2">
+            {{studentValues[0]}}
+        </div>
+        <div class="col col-md-4">
+            {{studentValues[1] | titlecase}}
+        </div>
+        <div class="col col-md-4">
+            {{studentValues[2]}}
+        </div>
+        <div class="col col-md-2">
+            {{studentValues[4]}}
+        </div>
+    </div>
+</div>

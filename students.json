@@ -5,7 +5,7 @@
       "name": "mothukuri swathi",
       "mobile": "8955098776",
       "gender": "Female",
-      "rating": "5"
+      "rating": "3"
     },
     {
       "id": 2,
@@ -19,14 +19,14 @@
       "name": "swasd",
       "mobile": 7687897689,
       "gender": "Female",
-      "rating": "3"
+      "rating": "2"
     },
     {
       "id": 4,
       "name": "zxcvb",
       "mobile": 7687897686,
       "gender": "Female",
-      "rating": "1"
+      "rating": "3"
     },
     {
       "id": 5,
@@ -40,7 +40,7 @@
       "name": "swasd",
       "mobile": 7687897689,
       "gender": "Male",
-      "rating": "3"
+      "rating": "4"
     },
     {
       "id": 7,
@@ -117,7 +117,7 @@
       "name": "renuka",
       "mobile": "5454543234",
       "gender": "Female",
-      "rating": "2"
+      "rating": "4"
     },
     {
       "id": 18,
@@ -132,6 +132,27 @@
       "mobile": "7868789768",
       "gender": "Female",
       "rating": "4"
+    },
+    {
+      "id": 20,
+      "name": "subhasri",
+      "mobile": "6765456767",
+      "gender": "Female",
+      "rating": "3"
+    },
+    {
+      "id": 21,
+      "name": "keziya",
+      "mobile": "8987654345",
+      "gender": "Female",
+      "rating": "4"
+    },
+    {
+      "id": 22,
+      "name": "yamini",
+      "mobile": "8765432345",
+      "gender": "Female",
+      "rating": "3"
     }
   ]
 }

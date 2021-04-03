@@ -10,22 +10,25 @@ import {StudentService} from '../student-service'
 export class DisplayStudentListComponent implements OnInit {
   Students: Student[];
   message="";
-  notification = null;
+  notification;
+  clicked:boolean;
 
-  constructor(private studentservice:StudentService) { }
+  constructor(private studentservice:StudentService) {
+    this.clicked =false;
+    this.notification = null;
+   }
 
-  ngOnInit(): void {
-   
-    
-    this.studentservice.updatedFlag.subscribe(()=>{
-      this.getStudentList("update");
+  ngOnInit(): void {   
+    this.studentservice.updatedFlag.subscribe((res)=>{
+      if(res.start==true){
+        this.getStudentList("update");
+      }
     });
-    this.studentservice.newDataFlag.subscribe(()=>{
-      this.getStudentList("new");
+    this.studentservice.newDataFlag.subscribe((res)=>{
+      if(res.start==true){
+        this.getStudentList("new");
+      }
     });
-    this.studentservice.dataToEdit.subscribe(()=>{
-
-    }) 
     this.getStudentList(null);  
   }
   getStudentList(notify:string) {
@@ -69,9 +72,8 @@ export class DisplayStudentListComponent implements OnInit {
       }
     );
   }
-  editStudent(s:Student){
-    this.studentservice.dataToEdit.next({id:s.id,name:s.name,mobile:s.mobile,gender:s.gender,rating:s.rating})
-  }
+ 
+  
 
   }
 

@@ -82,7 +82,7 @@ export class StudentFormComponent implements OnInit {
         this.studentservice.newDataFlag.subscribe((res)=>{
           this.newDataFlag = res.newDataFlag;
         })
-        this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag});
+        this.studentservice.newDataFlag.next({newDataFlag:!this.newDataFlag,start:true});
         this.ratingFromChild = -1;
         this.postError= null;
         this.displayName =false;      
@@ -105,7 +105,7 @@ export class StudentFormComponent implements OnInit {
         this.studentservice.updatedFlag.subscribe((res)=>{
           this.updated = res.added;
         })
-        this.studentservice.updatedFlag.next({added:!this.updated});
+        this.studentservice.updatedFlag.next({added:!this.updated,start:true});
         this.ratingFromChild = -1;
         this.postError= null;
         this.displayName =false;

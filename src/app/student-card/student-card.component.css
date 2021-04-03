@@ -1,0 +1,8 @@
+.s-card:hover {
+    background-color: #6c757d;
+    color: white;
+}
+.s-card{
+    cursor: pointer;
+}
+

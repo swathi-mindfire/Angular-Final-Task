@@ -2,7 +2,7 @@
 <div class="container mt-5 pt-1" >
     <div *ngIf = "notification != null" class="text-center text-info"><h3>{{notification}}</h3></div>
     <div id="data">
-        <div class="card mt-2 p-2 bg-primary text-white">
+        <div class="card mt-2 p-2 text-white list-head">
             <div class="row">
                 <div class="col col-md-2">Id</div>
                 <div class="col col-md-4">Name</div>
@@ -11,23 +11,8 @@
             </div>        
         </div>
         <div>{{message}}</div>
-        <div class="card mt-4 p-2 data-row" *ngFor ="let student of Students" (click)= "editStudent(student)">
-         
-            <div class="row data-row">
-                <div class="col col-md-2">
-                    {{student.id}}
-                </div>
-                <div class="col col-md-4">
-                    {{student.name | titlecase}}
-                </div>
-                <div class="col col-md-4">
-                    {{student.mobile}}
-                </div>
-                <div class="col col-md-2">
-                    {{student.rating}}
-                </div>
-            </div>
-        
+        <div *ngFor = "let s of Students">
+            <app-student-card [student] = s></app-student-card>
         </div>
     </div>   
 </div>
