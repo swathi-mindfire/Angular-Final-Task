@@ -3,11 +3,11 @@ import { Student } from '../student-interface';
 import { StudentService } from '../student-service';
 
 @Component({
-  selector: 'app-student-card',
-  templateUrl: './student-card.component.html',
-  styleUrls: ['./student-card.component.css']
+  selector: 'app-student-details-card',
+  templateUrl: './student-details-card.component.html',
+  styleUrls: ['./student-details-card.component.css']
 })
-export class StudentCardComponent implements OnInit {
+export class StudentDetailsCardComponent implements OnInit {
   clicked:boolean
   
   studentKeys =[""];

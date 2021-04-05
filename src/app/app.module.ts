@@ -6,7 +6,7 @@ import { StudentFormComponent } from './student-form/student-form.component';
 import { StudentRatingComponent } from './student-rating/student-rating.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StudentCardComponent } from './student-card/student-card.component';
+import { StudentDetailsCardComponent } from './student-card/student-details-card.component';
 import { DisplayStudentListComponent } from './display-student-list/display-student-list.component';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { DisplayStudentListComponent } from './display-student-list/display-stud
     StudentFormComponent,
     DisplayStudentListComponent,
     StudentRatingComponent,
-    StudentCardComponent, 
+    StudentDetailsCardComponent
   ],
   imports: [
     BrowserModule,

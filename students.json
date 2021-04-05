@@ -5,20 +5,20 @@
       "name": "mothukuri swathi",
       "mobile": "8955098776",
       "gender": "Female",
-      "rating": "4"
+      "rating": "3"
     },
     {
       "id": 2,
-      "name": "mothukuri ",
+      "name": "mothukuri padma",
       "mobile": "6767676767",
       "gender": "Male",
-      "rating": "1"
+      "rating": "3"
     },
     {
       "id": 3,
-      "name": "swasd",
+      "name": "mothukuri murali",
       "mobile": 7687897689,
-      "gender": "Female",
+      "gender": "Male",
       "rating": "3"
     },
     {
@@ -100,59 +100,10 @@
     },
     {
       "id": 15,
-      "name": "sai",
-      "mobile": "5656565656",
+      "name": "yamini",
+      "mobile": "7687897689",
       "gender": "Female",
       "rating": "2"
-    },
-    {
-      "id": 16,
-      "name": "Jyothi",
-      "mobile": "9678765654",
-      "gender": "Female",
-      "rating": "3"
-    },
-    {
-      "id": 17,
-      "name": "renuka",
-      "mobile": "5454543234",
-      "gender": "Female",
-      "rating": "4"
-    },
-    {
-      "id": 18,
-      "name": "Tanmayee",
-      "mobile": "9445656453",
-      "gender": "Female",
-      "rating": "5"
-    },
-    {
-      "id": 19,
-      "name": "valli",
-      "mobile": "7868789768",
-      "gender": "Female",
-      "rating": "4"
-    },
-    {
-      "id": 20,
-      "name": "subhasri",
-      "mobile": "6765456767",
-      "gender": "Female",
-      "rating": "3"
-    },
-    {
-      "id": 21,
-      "name": "keziya",
-      "mobile": "8987654345",
-      "gender": "Female",
-      "rating": "4"
-    },
-    {
-      "id": 22,
-      "name": "yamini",
-      "mobile": "8765432345",
-      "gender": "Female",
-      "rating": "3"
     }
   ]
 }
